@@ -52,7 +52,7 @@ Se o projeto possui um único executável, basta rodar:
 stack run
 ```
 
-💻 5. Executar no GHCi (modo interativo)
+### 5. Executar no GHCi (modo interativo)
 ```bash
 stack ghci
 ```
