@@ -212,8 +212,8 @@ executarOpcaoEstatistica opcao = do
         let sortedDados = sortList numbers
         let media = mean sortedDados
         let mediana = median sortedDados
-        let max = head sortedDados
-        let min = last sortedDados
+        let min = head sortedDados
+        let max = last sortedDados
 
         -- Output
         putStrLn "\n-------------------------"
