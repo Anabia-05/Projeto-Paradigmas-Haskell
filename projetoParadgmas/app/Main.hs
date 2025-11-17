@@ -1,6 +1,6 @@
 module Main (main) where
 
-import Lib (mostrarMenuConversao, executarOpcaoConversao, mostrarMenuValidacao, executarOpcaoValidacao)
+import Lib (mostrarMenuConversao, executarOpcaoConversao, mostrarMenuValidacao, executarOpcaoValidacao, mostrarMenuEstatistica, executarOpcaoEstatistica)
 import System.IO (hFlush, stdout)
 
 -- Menu Principal
@@ -22,7 +22,8 @@ executarOpcao opcao =
     case opcao of
         1 -> do
             loopConversao
-        2 -> putStrLn "Opção 2 (Estatísticas) selecionada. Implementação pendente."
+        2 -> do
+            loopEstatistica
         3 -> do
             loopValidacao  -- Chamada para o novo loop de validação
         _ -> putStrLn "Opção inválida. Por favor, escolha 1, 2, 3 ou 4."
@@ -56,6 +57,19 @@ loopValidacao = do
         else do
             executarOpcaoValidacao opcao
             loopValidacao
+
+loopEstatistica :: IO()
+loopEstatistica = do
+    mostrarMenuEstatistica
+    opcaoStr <- getLine
+
+    let opcao = if null opcaoStr then 0 else read opcaoStr :: Int
+
+    if opcao == 2
+        then putStrLn "Voltando ao Menu Principal..."
+    else do
+        executarOpcaoEstatistica opcao
+        loopEstatistica
 
 -- I/O: Loop Principal
 loop :: IO ()
