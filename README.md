@@ -2,10 +2,12 @@
 
 ## Integrantes 
 - Ana Beatriz Romero 
-- Guilherme Cavalcanti de Sá Barreto (849537)
-- João Victor Rocha Fernandes (850069)
-- João Constantino Pontes Barreto (849518)
+- João Constantino
+- José Roberval
+- Julia Saldanha
 - Pedro Henrique Afonso
+- Pedro Marques
+- Victor Hugo
 
 ## Tecnologias utilizadas:
 
