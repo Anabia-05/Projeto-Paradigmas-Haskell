@@ -13,7 +13,6 @@
 
 ![Haskell](https://img.shields.io/badge/Haskell-5e5086?style=for-the-badge&logo=haskell&logoColor=white)
 ![GHC](https://img.shields.io/badge/GHC-8.10+-yellow?style=for-the-badge)
-![Cabal](https://img.shields.io/badge/Cabal-3.0+-brightgreen?style=for-the-badge)
 ![Stack](https://img.shields.io/badge/Stack-0.1+-orange?style=for-the-badge&logo=stackshare&logoColor=white)
 
 ## Instruções para Executar o codigo:
