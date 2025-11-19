@@ -25,7 +25,9 @@ source-repository head
 
 library
   exposed-modules:
-      Lib
+      Conversao
+      Estatistica
+      Validacao
   other-modules:
       Paths_projetoParadgmas
   autogen-modules:

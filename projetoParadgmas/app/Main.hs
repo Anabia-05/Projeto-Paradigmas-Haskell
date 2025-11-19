@@ -1,6 +1,8 @@
 module Main (main) where
 
-import Lib (mostrarMenuConversao, executarOpcaoConversao, mostrarMenuValidacao, executarOpcaoValidacao, mostrarMenuEstatistica, executarOpcaoEstatistica)
+import  Conversao(mostrarMenuConversao, executarOpcaoConversao)
+import  Validacao(mostrarMenuValidacao, executarOpcaoValidacao)
+import  Estatistica(mostrarMenuEstatistica, executarOpcaoEstatistica)
 import System.IO (hFlush, stdout)
 
 -- Menu Principal
@@ -25,7 +27,7 @@ executarOpcao opcao =
         2 -> do
             loopEstatistica
         3 -> do
-            loopValidacao  -- Chamada para o novo loop de validação
+            loopValidacao  
         _ -> putStrLn "Opção inválida. Por favor, escolha 1, 2, 3 ou 4."
 
 -- Loop para Conversão Monetária
