@@ -38,6 +38,10 @@ mostrarMenuConversao = do
     hFlush stdout
 
 -- I/O: Executar Opção de Conversão
+
+preparaEntradaNumerica :: String -> String
+preparaEntradaNumerica = map (\c -> if c == ',' then '.' else c)
+
 executarOpcaoConversao :: Int -> IO ()
 executarOpcaoConversao 5 = putStrLn "Voltando..."
 executarOpcaoConversao opcao = do
@@ -45,21 +49,25 @@ executarOpcaoConversao opcao = do
     hFlush stdout
 
     inputStr <- getLine
-    let quantia = read inputStr :: Double -- ASSUME inputStr is valid Double for simplicity
+    let inputTratado = preparaEntradaNumerica inputStr
 
-    case opcao of
-        1 -> do
-            let resultado = dolarParaReal quantia
-            putStrLn $ show quantia ++ " USD = R$ " ++ show resultado
-        2 -> do
-            let resultado = realParaDolar quantia
-            putStrLn $ "R$ " ++ show quantia ++ " = " ++ show resultado ++ " USD"
-        3 -> do
-            let resultado = euroParaReal quantia
-            putStrLn $ show quantia ++ " EUR = R$ " ++ show resultado
-        4 -> do
-            let resultado = realParaEuro quantia
-            putStrLn $ "R$ " ++ show quantia ++ " = " ++ show resultado ++ " EUR"
-        _ -> putStrLn "Opção inválida. Por favor, escolha 1, 2, 3, 4 ou 5."
-
+    if null inputTratado
+        then putStrLn "Entrada inválida: Por favor, digite um valor numérico."
+        else do
+            let quantia = read inputTratado :: Double 
+            
+            case opcao of
+                1 -> do
+                    let resultado = dolarParaReal quantia
+                    putStrLn $ show quantia ++ " USD = R$ " ++ show resultado
+                2 -> do
+                    let resultado = realParaDolar quantia
+                    putStrLn $ "R$ " ++ show quantia ++ " = " ++ show resultado ++ " USD"
+                3 -> do
+                    let resultado = euroParaReal quantia
+                    putStrLn $ show quantia ++ " EUR = R$ " ++ show resultado
+                4 -> do
+                    let resultado = realParaEuro quantia
+                    putStrLn $ "R$ " ++ show quantia ++ " = " ++ show resultado ++ " EUR"
+                _ -> putStrLn "Opção inválida. Por favor, escolha 1, 2, 3, 4 ou 5."
 
